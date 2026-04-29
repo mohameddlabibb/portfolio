@@ -9,7 +9,7 @@ export const IMGS: Record<string, string> = {
   Supabase:   "https://i.postimg.cc/7fhNDY1R/supabase.webp",
   Vite:       "https://i.postimg.cc/gn7H0FNY/vite.webp",
   Figma:      "https://i.postimg.cc/L4BMN7Mg/figma.png",
-  Dart:       "https://i.postimg.cc/xT5nTZxm/dart.png",
+  Dart:       "https://i.postimg.cc/ZYyLmtqN/dart.png",
 };
 
 export const IC: Record<string, (s: number) => JSX.Element> = Object.fromEntries(

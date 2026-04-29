@@ -13,7 +13,7 @@ export default function About() {
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
 
         <div className="rv" style={{ marginBottom: 48 }}>
-          <p style={{ fontSize: ".68rem", letterSpacing: ".22em", color: "#ff3500", fontFamily: "monospace", marginBottom: 10 }}>// 01 — About + Services</p>
+          <p style={{ fontSize: ".75rem", letterSpacing: ".22em", color: "#ff3500", fontFamily: "monospace", marginBottom: 10 }}>About + Services</p>
           <h2 style={{ fontSize: "clamp(32px,5vw,60px)", fontWeight: 900, letterSpacing: "-.02em", color: "#fff" }}>I Build Things That Matter</h2>
         </div>
 

@@ -48,7 +48,7 @@ export default function Projects() {
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
 
         <div className="rv">
-          <p style={{ fontSize: ".68rem", letterSpacing: ".22em", color: "#ff3500", fontFamily: "monospace", marginBottom: 10 }}>// 03 — Projects</p>
+          <p style={{ fontSize: ".75rem", letterSpacing: ".22em", color: "#ff3500", fontFamily: "monospace", marginBottom: 10 }}>Projects</p>
           <h2 style={{ fontSize: "clamp(32px,5vw,60px)", fontWeight: 900, letterSpacing: "-.02em", marginBottom: 48 }}>Selected Work</h2>
         </div>
 

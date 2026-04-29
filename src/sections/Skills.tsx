@@ -7,7 +7,7 @@ export default function Skills() {
       <div style={{ maxWidth: 1200, margin: "0 auto", position: "relative", zIndex: 2 }}>
 
         <div className="rv" style={{ marginBottom: 56 }}>
-          <p style={{ fontSize: ".68rem", letterSpacing: ".22em", color: "#ff3500", fontFamily: "monospace", marginBottom: 10 }}>Skills</p>
+          <p style={{ fontSize: ".75rem", letterSpacing: ".22em", color: "#ff3500", fontFamily: "monospace", marginBottom: 10 }}>Skills</p>
           <h2 style={{ fontSize: "clamp(32px,5vw,60px)", fontWeight: 900, letterSpacing: "-.02em", color: "#fff" }}>What I Work With</h2>
         </div>
 

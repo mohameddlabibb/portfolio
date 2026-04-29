@@ -33,7 +33,7 @@ export default function Hero() {
       {/* floating 3D tech icons */}
       {ICONS_3D.map(b => {
         const Fn = IC[b.k];
-        const sz = Math.round(b.sz * .58);
+        const sz = Math.round(b.sz * (b.is ?? .58));
         const sh = `0 ${Math.round(b.sz / 3)}px ${b.sz * 1.4}px rgba(${b.gl},.2),0 6px 18px rgba(0,0,0,.08),4px 4px 0 rgba(${b.gl},.25),8px 8px 0 rgba(${b.gl},.14),12px 12px 0 rgba(${b.gl},.07),inset 0 1.5px 0 rgba(255,255,255,.95)`;
         return (
           <div key={b.k} style={{ position: "absolute", left: b.l, top: b.t, zIndex: 1, pointerEvents: "none", animation: `f${b.fan} ${b.fd}s ${b.dl}s ease-in-out infinite` }}>

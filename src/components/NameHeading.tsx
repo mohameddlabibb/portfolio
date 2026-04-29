@@ -7,7 +7,7 @@ export default function NameHeading() {
       onMouseEnter={() => setHov(true)}
       onMouseLeave={() => setHov(false)}
       style={{
-        fontSize: "clamp(54px,9.5vw,128px)",
+        fontSize: "clamp(40px,6.5vw,88px)",
         fontWeight: 900,
         letterSpacing: "-.03em",
         lineHeight: .92,

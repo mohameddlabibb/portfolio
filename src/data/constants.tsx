@@ -29,8 +29,8 @@ export const ICONS_3D = [
   { k: "Tailwind",   bg: "#eafafd", gl: "6,182,212",   l: "79%", t: "56%", sz: 74, td: 8,   fd: 5,   tan: 2, fan: 1, dl: 2.4 },
   { k: "Supabase",   bg: "#ecfaf5", gl: "62,207,142",  l: "6%",  t: "66%", sz: 72, td: 10,  fd: 7,   tan: 3, fan: 2, dl: .7  },
   { k: "Vite",       bg: "#f3eeff", gl: "130,80,220",  l: "48%", t: "76%", sz: 74, td: 8,   fd: 6,   tan: 5, fan: 4, dl: 3.1 },
-  { k: "Figma",      bg: "#fff2ef", gl: "242,78,30",   l: "33%", t: "12%", sz: 72, td: 9,   fd: 7,   tan: 6, fan: 3, dl: 1.1 },
-  { k: "Dart",       bg: "#eaf6ff", gl: "13,135,200",  l: "22%", t: "28%", sz: 70, td: 11,  fd: 5,   tan: 4, fan: 6, dl: 2.0 },
+  { k: "Figma",      bg: "#fff2ef", gl: "242,78,30",   l: "33%", t: "12%", sz: 72, td: 9,   fd: 7,   tan: 6, fan: 3, dl: 1.1, is: 0.78 },
+  { k: "Dart",       bg: "#eaf6ff", gl: "13,135,200",  l: "22%", t: "28%", sz: 70, td: 11,  fd: 5,   tan: 4, fan: 6, dl: 2.0, is: 0.78 },
 ];
 
 export const TECH_STRIP = [

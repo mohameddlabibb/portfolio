@@ -57,7 +57,7 @@ export default function Contact() {
       <div style={{ maxWidth: 900, margin: "0 auto" }}>
 
         <div className="rv">
-          <p style={{ fontSize: ".68rem", letterSpacing: ".22em", color: "#ff3500", fontFamily: "monospace", marginBottom: 10 }}>// 04 — Contact</p>
+          <p style={{ fontSize: ".75rem", letterSpacing: ".22em", color: "#ff3500", fontFamily: "monospace", marginBottom: 10 }}>Contact</p>
           <h2 style={{ fontSize: "clamp(32px,5vw,58px)", fontWeight: 900, letterSpacing: "-.02em", color: "#fff", marginBottom: 10 }}>Let's Build Together</h2>
         </div>
 

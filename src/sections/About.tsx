@@ -47,8 +47,8 @@ export default function About() {
         </div>
 
         <p className="rv" style={{ color: "#555", lineHeight: 1.9, fontSize: ".95rem", maxWidth: 620, transitionDelay: ".15s" }}>
-          Frontend developer & BIS student at AASTMT Cairo. React/TypeScript specialist from pixel-perfect UIs to REST APIs.
-          Completed an IT internship at <span style={{ color: "#888" }}>SomaBay</span> and produce{" "}
+          Frontend developer & BIS student at AASTMT Cairo. React/TypeScript specialist from pixel-perfect UIs to REST APIs,
+          and produce{" "}
           <span style={{ color: "#ff3500" }}>AI-driven fashion photography</span> for Egyptian streetwear brands.
         </p>
 

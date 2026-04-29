@@ -51,8 +51,8 @@ export const TECH_STRIP = [
 export const SVCS = [
   { id: "web", l: "Websites",       d: "Responsive sites from scratch", c: "#ff3500", bg: "#fff5f2" },
   { id: "des", l: "Web Design",     d: "Modern UI/UX that converts",    c: "#7c3aed", bg: "#f5f3ff" },
-  { id: "ai",  l: "AI Photoshoots", d: "Hyper-realistic AI fashion",    c: "#f43f5e", bg: "#fff1f4" },
   { id: "app", l: "Mobile Apps",    d: "iOS & Android applications",    c: "#2563eb", bg: "#eff6ff" },
+  { id: "ai",  l: "AI Photoshoots", d: "Hyper-realistic AI fashion",    c: "#f43f5e", bg: "#fff1f4" },
 ];
 
 // ── Add / remove skill categories here ──────────────────────────────────────

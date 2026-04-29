@@ -8,8 +8,8 @@ export const IMGS: Record<string, string> = {
   Tailwind:   "https://i.postimg.cc/pprBxXYT/Tailwind-CSS-Logo-svg.png",
   Supabase:   "https://i.postimg.cc/7fhNDY1R/supabase.webp",
   Vite:       "https://i.postimg.cc/gn7H0FNY/vite.webp",
-  Figma:      "https://i.postimg.cc/NLpxWrXD/figma.png",
-  Dart:       "https://i.postimg.cc/QV0qRW71/dart.png",
+  Figma:      "https://postimg.cc/G92NpXtb",
+  Dart:       "https://postimg.cc/BXjdmmGZ",
 };
 
 export const IC: Record<string, (s: number) => JSX.Element> = Object.fromEntries(

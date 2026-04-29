@@ -12,6 +12,7 @@ const PROJECTS = [
     tagColor: "#c53500",
     tagBg: "#fff5f2",
     tagBorder: "#ffd5c8",
+    github: "https://github.com/mohameddlabibb/SANAD.web",
     delay: "0s",
   },
   {
@@ -24,6 +25,7 @@ const PROJECTS = [
     tagColor: "#5b21b6",
     tagBg: "#f5f3ff",
     tagBorder: "#ddd6fe",
+    github: "https://github.com/mohameddlabibb/FindDocs",
     delay: ".12s",
   },
 ];
@@ -69,7 +71,7 @@ export default function Projects() {
                   <h3 style={{ fontSize: "clamp(22px,3vw,36px)", fontWeight: 900, letterSpacing: "-.02em" }}>{p.title}</h3>
                 </div>
                 <a
-                  href="https://github.com/mohameddlabibb"
+                  href={p.github}
                   target="_blank"
                   rel="noopener"
                   style={{ padding: "9px 18px", border: "1.5px solid rgba(0,0,0,.1)", borderRadius: 8, color: "#bbb", textDecoration: "none", fontSize: ".76rem", letterSpacing: ".08em", textTransform: "uppercase", transition: "all .25s" }}

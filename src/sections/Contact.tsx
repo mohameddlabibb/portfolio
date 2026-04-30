@@ -29,7 +29,7 @@ export default function Contact() {
     setLoading(true);
     const svcs = selSvc.map(id => SVCS.find(s => s.id === id)!.l).join(", ");
     try {
-      const res = await fetch(`https://formsubmit.co/ajax/${EMAIL}`, {
+      const res = await fetch(`https://formsubmit.co/ajax/3edc07b42ba51a34ccba5553c5d92438`, {
         method: "POST",
         headers: { "Content-Type": "application/json", "Accept": "application/json" },
         body: JSON.stringify({ name: form.name, email: form.email, services: svcs, message: form.msg, _subject: `Inquiry from ${form.name}`, _captcha: "false" }),

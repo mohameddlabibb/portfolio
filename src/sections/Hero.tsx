@@ -53,7 +53,7 @@ export default function Hero() {
           </text>
         </svg>
         <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center" }}>
-          <div style={{ width: 10, height: 10, borderRadius: "50%", background: "#00c853", position: "relative" }}>
+          <div style={{ width: 13, height: 13, borderRadius: "50%", background: "#00c853", position: "relative" }}>
             <div style={{ position: "absolute", inset: 0, borderRadius: "50%", background: "#00c853", animation: "pulse 2s ease-out infinite" }} />
           </div>
         </div>

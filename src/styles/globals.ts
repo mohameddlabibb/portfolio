@@ -67,7 +67,7 @@ section{padding:100px 56px}
   .stats-grid{grid-template-columns:repeat(2,1fr);gap:14px;padding-top:24px;margin-bottom:24px}
   .svc-grid{grid-template-columns:1fr}
   .form-2col{grid-template-columns:1fr}
-  .mob-icon{display:none!important}
+  .mob-icon{zoom:.58;opacity:.45}
   .hero-badge svg{width:88px!important;height:88px!important}
   .pc-body{padding:22px 18px}
 }

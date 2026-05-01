@@ -13,7 +13,7 @@ export default function Footer() {
         {EMAIL}
       </a>
       <span style={{ fontFamily: "monospace", fontSize: ".7rem", color: "#2a2a2a" }}>
-        Built with React + <span style={{ color: "#ff3500" }}>♥</span>
+        Built with React
       </span>
     </footer>
   );

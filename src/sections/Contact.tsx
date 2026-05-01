@@ -67,14 +67,14 @@ export default function Contact() {
             onMouseLeave={e => e.currentTarget.style.opacity = "1"}>
             {EMAIL}
           </a>
-          <span style={{ color: "#333", fontSize: ".8rem" }}>· Available for work</span>
+          <span style={{ color: "#dbdbdb", fontSize: ".8rem" }}>· Available for work</span>
         </div>
 
         {!done ? (
           <>
             {/* service picker */}
             <div className="rv" style={{ marginBottom: 30, transitionDelay: ".08s" }}>
-              <p style={{ fontSize: ".78rem", color: "#444", marginBottom: 16 }}>What do you need? <span style={{ color: "#ff3500" }}>*</span></p>
+              <p style={{ fontSize: ".78rem", color: "#dbdbdb", marginBottom: 16 }}>What do you need? <span style={{ color: "#ff3500" }}>*</span></p>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 14 }}>
                 {SVCS.map(s => {
                   const on = selSvc.includes(s.id);

@@ -49,7 +49,7 @@ export default function Hero() {
         <svg viewBox="0 0 100 100" width="124" height="124" style={{ animation: "spin 12s linear infinite", display: "block" }}>
           <path id="cr" fill="none" d="M50,50 m-36,0 a36,36 0 1,1 72,0 a36,36 0 1,1 -72,0" />
           <text fontSize="9.2" fontFamily="monospace" letterSpacing="2" fill="#ff3500">
-            <textPath href="#cr"> · AVAILABLE · CAIRO · 2026 · HIRE MEE · </textPath>
+            <textPath href="#cr"> · AVAILABLE · CAIRO · HIRE ME · </textPath>
           </text>
         </svg>
         <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center" }}>

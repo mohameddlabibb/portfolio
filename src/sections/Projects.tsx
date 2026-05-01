@@ -64,7 +64,7 @@ export default function Projects() {
             onMouseLeave={() => untilt(refs[i].current)}
           >
             <div style={{ height: 5, background: `linear-gradient(90deg,${p.gradient})` }} />
-            <div style={{ padding: "40px 44px" }}>
+            <div className="pc-body">
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: 14, marginBottom: 20 }}>
                 <div>
                   <p style={{ fontSize: ".66rem", letterSpacing: ".18em", color: p.accentColor, marginBottom: 7, fontFamily: "monospace", fontWeight: 700 }}>{p.label}</p>

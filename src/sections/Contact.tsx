@@ -75,7 +75,7 @@ export default function Contact() {
             {/* service picker */}
             <div className="rv" style={{ marginBottom: 30, transitionDelay: ".08s" }}>
               <p style={{ fontSize: ".78rem", color: "#dbdbdb", marginBottom: 16 }}>What do you need? <span style={{ color: "#ff3500" }}>*</span></p>
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 14 }}>
+              <div className="svc-grid">
                 {SVCS.map(s => {
                   const on = selSvc.includes(s.id);
                   return (
@@ -98,7 +98,7 @@ export default function Contact() {
 
             {/* fields */}
             <div className="rv" style={{ display: "flex", flexDirection: "column", gap: 14, transitionDelay: ".12s" }}>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
+              <div className="form-2col">
                 {(["name", "email"] as const).map(k => (
                   <div key={k}>
                     <label style={{ fontSize: ".72rem", color: "#444", letterSpacing: ".1em", display: "block", marginBottom: 8, textTransform: "uppercase" }}>

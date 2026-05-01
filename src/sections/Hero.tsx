@@ -36,7 +36,7 @@ export default function Hero() {
         const sz = Math.round(b.sz * (b.is ?? .58));
         const sh = `0 ${Math.round(b.sz / 3)}px ${b.sz * 1.4}px rgba(${b.gl},.2),0 6px 18px rgba(0,0,0,.08),4px 4px 0 rgba(${b.gl},.25),8px 8px 0 rgba(${b.gl},.14),12px 12px 0 rgba(${b.gl},.07),inset 0 1.5px 0 rgba(255,255,255,.95)`;
         return (
-          <div key={b.k} style={{ position: "absolute", left: b.l, top: b.t, zIndex: 1, pointerEvents: "none", animation: `f${b.fan} ${b.fd}s ${b.dl}s ease-in-out infinite` }}>
+          <div key={b.k} className="mob-icon" style={{ position: "absolute", left: b.l, top: b.t, zIndex: 1, pointerEvents: "none", animation: `f${b.fan} ${b.fd}s ${b.dl}s ease-in-out infinite` }}>
             <div style={{ width: b.sz, height: b.sz, background: b.bg, borderRadius: Math.round(b.sz * .2), display: "flex", alignItems: "center", justifyContent: "center", boxShadow: sh, border: `1.5px solid rgba(${b.gl},.18)`, animation: `t${b.tan} ${b.td}s ${b.dl}s ease-in-out infinite` }}>
               {Fn && Fn(sz)}
             </div>
@@ -45,7 +45,7 @@ export default function Hero() {
       })}
 
       {/* spinning "available" badge */}
-      <div style={{ position: "absolute", top: "7%", right: "6%", zIndex: 3 }}>
+      <div className="hero-badge" style={{ position: "absolute", top: "7%", right: "6%", zIndex: 3 }}>
         <svg viewBox="0 0 100 100" width="124" height="124" style={{ animation: "spin 12s linear infinite", display: "block" }}>
           <path id="cr" fill="none" d="M50,50 m-36,0 a36,36 0 1,1 72,0 a36,36 0 1,1 -72,0" />
           <text fontSize="9.2" fontFamily="monospace" letterSpacing="2" fill="#ff3500">

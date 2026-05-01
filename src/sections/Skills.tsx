@@ -3,7 +3,7 @@ import SkillCard from "../components/SkillCard";
 
 export default function Skills() {
   return (
-    <section id="skills" style={{ background: "#0d0d0d", overflow: "hidden", position: "relative", padding: "100px 56px" }}>
+    <section id="skills" style={{ background: "#0d0d0d", overflow: "hidden", position: "relative" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto", position: "relative", zIndex: 2 }}>
 
         <div className="rv" style={{ marginBottom: 56 }}>

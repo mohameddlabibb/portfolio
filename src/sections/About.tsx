@@ -9,7 +9,7 @@ const STATS: [string, string][] = [
 
 export default function About() {
   return (
-    <section id="about" style={{ background: "#0a0a0a", padding: "90px 56px" }}>
+    <section id="about" style={{ background: "#0a0a0a", padding: "clamp(60px,9vw,90px) clamp(20px,5.6vw,56px)" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
 
         <div className="rv" style={{ marginBottom: 48 }}>
@@ -37,7 +37,7 @@ export default function About() {
         </div>
 
         {/* stats row */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 32, borderTop: "1px solid #1a1a1a", paddingTop: 44, marginBottom: 44 }} className="rv">
+        <div className="stats-grid rv">
           {STATS.map(([v, l]) => (
             <div key={l}>
               <div style={{ fontSize: "clamp(26px,3.5vw,44px)", fontWeight: 900, color: "#fff", fontFamily: "monospace", marginBottom: 6 }}>{v}</div>

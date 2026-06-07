@@ -28,6 +28,12 @@ export function initScene(canvas: HTMLCanvasElement, heroEl: HTMLElement): () =>
   const svgLoader = new SVGLoader();
   const items: THREE.Object3D[] = [];
 
+  // On narrow/portrait viewports the visible world-width shrinks but the icons
+  // don't — so they balloon and bury the headline. Scale both the icons and
+  // their float reach down on phones so they read as a calm backdrop instead.
+  let kScale = 1;
+  const respK = () => (window.innerWidth <= 780 ? Math.max(0.5, window.innerWidth / 1100) : 1);
+
   /* a floating icon = the brand logo extruded to real 3D */
   function buildLogo(cfg: IconCfg): THREE.Group {
     const g = new THREE.Group();
@@ -128,8 +134,10 @@ export function initScene(canvas: HTMLCanvasElement, heroEl: HTMLElement): () =>
         ampX: 0.5, // left/right reach
         base: gridPos(i, viewBounds()),
         rot: 0.15 + Math.random() * 0.25,
+        baseScale: obj.scale.x, // 1 for extruded logos, 1.4 for GLTF models
       };
       obj.position.copy(obj.userData.base);
+      obj.scale.setScalar(obj.userData.baseScale * kScale);
       scene.add(obj);
       items.push(obj);
     };
@@ -155,6 +163,8 @@ export function initScene(canvas: HTMLCanvasElement, heroEl: HTMLElement): () =>
     renderer.setSize(w, ht); // updateStyle=true: pin CSS size so retina (dpr>1) doesn't display the canvas at 2× and shove the scene off-centre
     cam.aspect = w / ht;
     cam.updateProjectionMatrix();
+    kScale = respK();
+    items.forEach((o) => o.scale.setScalar(o.userData.baseScale * kScale));
     layout();
   }
   // Re-fit whenever the hero actually changes size. Crucial because the Anton
@@ -179,8 +189,8 @@ export function initScene(canvas: HTMLCanvasElement, heroEl: HTMLElement): () =>
     const t = clock.getElapsedTime();
     items.forEach((o) => {
       const u = o.userData;
-      o.position.y = u.base.y + Math.sin(t * u.sp + u.ph) * u.amp;
-      o.position.x = u.base.x + Math.cos(t * u.spX + u.phX) * u.ampX;
+      o.position.y = u.base.y + Math.sin(t * u.sp + u.ph) * u.amp * kScale;
+      o.position.x = u.base.x + Math.cos(t * u.spX + u.phX) * u.ampX * kScale;
       o.rotation.y = Math.sin(t * u.rot + u.ph) * 0.6;
       o.rotation.x = Math.cos(t * u.rot * 0.8 + u.ph) * 0.3;
     });

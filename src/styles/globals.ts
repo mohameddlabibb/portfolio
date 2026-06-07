@@ -103,7 +103,13 @@ h2.big{font-family:'Anton';font-size:clamp(44px,11vw,150px);line-height:.86;marg
 .mbtn{display:inline-block;margin-top:26px;border:2px solid var(--paper);padding:18px 40px;font-family:'JetBrains Mono';font-size:1rem;letter-spacing:.04em;will-change:transform}
 .mbtn:hover{background:var(--accent);border-color:var(--accent)}
 
-@media(max-width:780px){.about-row{grid-template-columns:1fr}.svcs{grid-template-columns:1fr 1fr}.svc:nth-child(2n){border-right:none}.stats{grid-template-columns:1fr 1fr}nav .l{display:none}.work-pin{height:auto;display:block;padding:60px 0}.htrack{flex-direction:column;transform:none!important}.pcard{flex:none;width:100%}}
+@media(max-width:780px){.about-row{grid-template-columns:1fr}.svcs{grid-template-columns:1fr 1fr}.svc:nth-child(2n){border-right:none}.stats{grid-template-columns:1fr 1fr}nav .l{display:none}.work-pin{height:auto;display:block;padding:60px 0}.htrack{flex-direction:column;transform:none!important}.pcard{flex:none;width:100%}
+/* hero: keep the 3D icons as a calm backdrop so the headline stays legible */
+.scene{opacity:.5}
+.hero{padding:84px 0 32px}
+.hero .meta{flex-direction:column;align-items:start;gap:14px;padding-top:22px;margin-top:18px}
+section{padding:90px 0}}
+@media(max-width:480px){.scene{opacity:.42}.pcard .media{height:200px}.pcard .body{padding:20px 20px}.pcard .pn{font-size:3.6rem}.stat{padding:22px 10px}}
 `;
 
 export default G;

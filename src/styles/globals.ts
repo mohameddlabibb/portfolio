@@ -106,6 +106,8 @@ h2.big{font-family:'Anton';font-size:clamp(44px,11vw,150px);line-height:.86;marg
 @media(max-width:780px){.about-row{grid-template-columns:1fr}.svcs{grid-template-columns:1fr 1fr}.svc:nth-child(2n){border-right:none}.stats{grid-template-columns:1fr 1fr}nav .l{display:none}.work-pin{height:auto;display:block;padding:60px 0}.htrack{flex-direction:column;transform:none!important}.pcard{flex:none;width:100%}
 /* hero: keep the 3D icons as a calm backdrop so the headline stays legible */
 .scene{opacity:.5}
+/* loosen the tight .86 stack so the outlined "DEVELOPER" line isn't crowded */
+.hero .line{line-height:1.05}
 .hero{padding:84px 0 32px}
 .hero .meta{flex-direction:column;align-items:start;gap:14px;padding-top:22px;margin-top:18px}
 section{padding:90px 0}}

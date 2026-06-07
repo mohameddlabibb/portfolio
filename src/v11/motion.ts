@@ -154,7 +154,7 @@ export function initMotion(): () => void {
     if (cur) gsap.to(cur, { x: e.clientX, y: e.clientY, duration: 0.25, ease: "power2.out" });
   };
   addEventListener("pointermove", onMove);
-  const growEls = [...document.querySelectorAll<HTMLElement>("a,.svc,.pcard,.stat")];
+  const growEls = [...document.querySelectorAll<HTMLElement>("a,.svc,.pcard,.stat")].filter((el) => el.id !== "magnet");
   const enter = () => cur?.classList.add("big");
   const leave = () => cur?.classList.remove("big");
   growEls.forEach((el) => {

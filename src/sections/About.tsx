@@ -3,13 +3,12 @@ import { STATS, SERVICES } from "../data/constants";
 export default function About() {
   return (
     <section id="about" className="pad">
-      <p className="eb rv">// About</p>
       <h2 className="big rl"><span>I build things.</span></h2>
       <div className="about-row">
         <p className="rv">
-          Frontend developer &amp; BIS student at AASTMT Cairo.{" "}
-          <span className="h">React / TypeScript specialist</span> from pixel-perfect UIs to
-          REST APIs — plus <span className="h2">AI-driven fashion photography</span> for
+          Full-Stack developer &amp; BIS student at AASTMT Cairo.{" "}
+          I build clean, fast interfaces and the systems behind them —
+          plus AI-driven fashion photography for
           Egyptian streetwear brands.
         </p>
         <div className="stats">
@@ -30,6 +29,7 @@ export default function About() {
           <div className="svc rv" key={s.n}>
             <div className="n">{s.n}</div>
             <h3>{s.t}</h3>
+            <p>{s.d}</p>
           </div>
         ))}
       </div>

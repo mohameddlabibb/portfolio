@@ -6,28 +6,6 @@ export const MARQUEES = {
   talk: ["Let's talk"],
 };
 
-// ── About ────────────────────────────────────────────────────────────────────
-export const STATS: { v?: string; count?: number; suffix?: string; label: string }[] = [
-  { count: 5, suffix: "+", label: "Projects" },
-  { count: 12, suffix: "+", label: "Tech" },
-  { v: "SomaBay", label: "Internship" },
-  { count: 2026, label: "Graduating" },
-];
-
-export const SERVICES = [
-  { n: "01", t: "Websites" },
-  { n: "02", t: "Web Design" },
-  { n: "03", t: "Mobile Apps" },
-  { n: "04", t: "AI Photoshoots" },
-];
-
-// ── Skills ───────────────────────────────────────────────────────────────────
-export const SKILL_CATS: { n: string; color?: string; cat: string; items: string[] }[] = [
-  { n: "01", cat: "Frontend", items: ["React", "TypeScript", "Vite", "Tailwind CSS", "HTML/CSS", "JavaScript"] },
-  { n: "02", color: "var(--blue)", cat: "Backend", items: ["Node.js", "Express", "MySQL", "Supabase", "JWT Auth", "REST APIs"] },
-  { n: "03", color: "var(--pink)", cat: "Tools", items: ["Git", "VS Code", "Postman", "Figma", "Vercel", "Claude Code"] },
-];
-
 // ── Work (pinned horizontal) ─────────────────────────────────────────────────
 export interface Project {
   n: string;
@@ -60,6 +38,28 @@ export const PROJECTS: Project[] = [
     tags: "React · TypeScript · SQLite · Vite",
     github: "https://github.com/mohameddlabibb/FindDocs",
   },
+];
+
+// ── About ────────────────────────────────────────────────────────────────────
+export const STATS: { v?: string; count?: number; suffix?: string; label: string }[] = [
+  { count: PROJECTS.length, suffix: "+", label: "Projects" },
+  { count: 12, suffix: "+", label: "Tech" },
+  { v: "SomaBay", label: "Internship" },
+  { count: 2026, label: "Graduating" },
+];
+
+export const SERVICES = [
+  { n: "01", t: "Web Design", d: "Interfaces with attitude, not templates." },
+  { n: "02", t: "Platforms", d: "Apps people log in and actually use." },
+  { n: "03", t: "Mobile Apps", d: "Native-feel apps for any device." },
+  { n: "04", t: "AI Photoshoots", d: "Brand campaigns without a studio." },
+];
+
+// ── Skills ───────────────────────────────────────────────────────────────────
+export const SKILL_CATS: { n: string; color?: string; cat: string; items: string[] }[] = [
+  { n: "01", cat: "Frontend", items: ["React", "TypeScript", "Vite", "Tailwind CSS", "HTML/CSS", "JavaScript"] },
+  { n: "02", color: "var(--blue)", cat: "Backend", items: ["Node.js", "Express", "MySQL", "Supabase", "JWT Auth", "REST APIs"] },
+  { n: "03", color: "var(--pink)", cat: "Tools", items: ["Git", "VS Code", "Postman", "Figma", "Vercel", "Claude Code"] },
 ];
 
 export const EMAIL = "mohameddlabibb@gmail.com";

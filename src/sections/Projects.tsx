@@ -3,9 +3,6 @@ import { PROJECTS } from "../data/constants";
 export default function Work() {
   return (
     <section className="work-pin" id="work">
-      <div className="work-head">
-        <p className="eb">// Selected Work — scroll →</p>
-      </div>
       <div className="htrack" id="htrack">
         {PROJECTS.map((p) => (
           <article className="pcard" key={p.n}>

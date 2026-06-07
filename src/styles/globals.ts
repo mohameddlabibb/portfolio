@@ -9,8 +9,8 @@ a{color:inherit;text-decoration:none}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 
 /* ── custom cursor ── */
-.cursor{position:fixed;top:0;left:0;width:18px;height:18px;border-radius:50%;background:var(--accent);mix-blend-mode:difference;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .25s,height .25s,background .25s}
-.cursor.big{width:70px;height:70px;background:#fff}
+.cursor{position:fixed;top:0;left:0;width:18px;height:18px;border-radius:50%;background:var(--accent);pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .25s,height .25s,background .25s}
+.cursor.big{width:70px;height:70px;background:var(--accent)}
 @media(hover:none){.cursor{display:none}}
 
 /* ── preloader ── */
@@ -34,12 +34,10 @@ nav .l{display:flex;gap:22px;font-size:.74rem;letter-spacing:.14em;text-transfor
 .line.o .inner{color:transparent;-webkit-text-stroke:2px var(--ink)}
 .line.fill .inner{background:linear-gradient(90deg,var(--accent),var(--pink),var(--blue),var(--accent));background-size:300% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:flow 8s linear infinite}
 @keyframes flow{to{background-position:300% 0}}
-.hero .meta{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;padding:30px 26px 0;border-top:2px solid var(--ink);margin-top:24px;opacity:0}
+.hero .meta{position:relative;z-index:4;display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;padding:30px 26px 0;border-top:2px solid var(--ink);margin-top:24px;opacity:0}
 .hero .role{font-size:clamp(14px,2vw,22px);font-weight:700;max-width:520px}
 .avail{display:inline-flex;align-items:center;gap:9px;font-family:'JetBrains Mono';font-size:.72rem;letter-spacing:.12em;text-transform:uppercase}
 .dot{width:11px;height:11px;border-radius:50%;background:#00c853;animation:b 1s steps(1) infinite}@keyframes b{50%{opacity:.2}}
-.scrollcue{position:absolute;left:50%;bottom:22px;z-index:2;transform:translateX(-50%);font-family:'JetBrains Mono';font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mut);animation:bob 1.6s ease-in-out infinite}
-@keyframes bob{50%{transform:translate(-50%,8px)}}
 
 /* ── marquee ── */
 .band{padding:18px 0;border-top:3px solid var(--ink);border-bottom:3px solid var(--ink);font-family:'Anton';font-size:clamp(34px,7vw,90px);text-transform:uppercase;overflow:hidden;white-space:nowrap}
@@ -52,7 +50,6 @@ nav .l{display:flex;gap:22px;font-size:.74rem;letter-spacing:.14em;text-transfor
 .band.acc .run span::after,.band.dark .run span::after{color:var(--lime)}
 
 section{padding:120px 0;position:relative}
-.eb{font-family:'JetBrains Mono';font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
 h2.big{font-family:'Anton';font-size:clamp(44px,11vw,150px);line-height:.86;margin:6px 0 30px}
 
 /* reveal util */
@@ -71,6 +68,7 @@ h2.big{font-family:'Anton';font-size:clamp(44px,11vw,150px);line-height:.86;marg
 .svc:not(:last-child){border-right:2px solid var(--ink)}
 .svc .n{font-family:'JetBrains Mono';font-size:.8rem;color:var(--accent)}
 .svc h3{font-family:'Anton';font-size:clamp(18px,2vw,30px);margin-top:10px}
+.svc p{font-family:'JetBrains Mono';font-size:clamp(11px,.9vw,13px);line-height:1.4;margin-top:10px;opacity:.7}
 .svc::after{content:'';position:absolute;inset:0;background:var(--accent);transform:translateY(101%);transition:transform .35s cubic-bezier(.7,0,.3,1);z-index:-1}
 .svc:hover::after{transform:translateY(0)}.svc:hover{color:#fff}.svc:hover .n{color:#fff}
 
@@ -96,7 +94,6 @@ h2.big{font-family:'Anton';font-size:clamp(44px,11vw,150px);line-height:.86;marg
 .pcard .row{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
 .pcard .tags{font-family:'JetBrains Mono';font-size:.74rem;color:var(--mut)}
 .pcard .gh{font-family:'JetBrains Mono';font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;border-bottom:2px solid var(--ink);padding-bottom:2px}
-.work-head{padding:0 26px;margin-bottom:6px;position:absolute;top:60px;left:0;z-index:3}
 
 /* contact */
 .contact{background:var(--ink);color:var(--paper);text-align:center;padding:0}

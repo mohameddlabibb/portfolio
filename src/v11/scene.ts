@@ -39,10 +39,10 @@ export function initScene(canvas: HTMLCanvasElement, heroEl: HTMLElement): () =>
       data.paths.forEach((p) => SVGLoader.createShapes(p).forEach((s) => shapes.push(s)));
       if (!shapes.length) throw new Error("no shapes");
       const geo = new THREE.ExtrudeGeometry(shapes, {
-        depth: 14,
+        depth: 2,
         bevelEnabled: true,
-        bevelThickness: 2,
-        bevelSize: 1.1,
+        bevelThickness: 0.5,
+        bevelSize: 0.45,
         bevelSegments: 2,
       });
       geo.computeBoundingBox();
@@ -50,7 +50,7 @@ export function initScene(canvas: HTMLCanvasElement, heroEl: HTMLElement): () =>
       const sz = new THREE.Vector3();
       bb.getSize(sz);
       geo.translate(-(bb.max.x + bb.min.x) / 2, -(bb.max.y + bb.min.y) / 2, -(bb.max.z + bb.min.z) / 2);
-      const s = 1.15 / Math.max(sz.x, sz.y);
+      const s = 1.85 / Math.max(sz.x, sz.y);
       const mesh = new THREE.Mesh(
         geo,
         new THREE.MeshStandardMaterial({ color: cfg.color, roughness: 0.35, metalness: 0.35, side: THREE.DoubleSide })
@@ -63,27 +63,55 @@ export function initScene(canvas: HTMLCanvasElement, heroEl: HTMLElement): () =>
     return g;
   }
 
-  // visible world half-extents at the icon plane (z = 0); depends on aspect
+  // visible world half-extents at the icon plane (z = 0). The camera maps the
+  // FULL hero height onto the canvas, but the hero is taller than the viewport —
+  // so we also compute the slice that is actually on screen (cy/vhh) and lay the
+  // icons out inside THAT, so none of them end up below the fold.
   function viewBounds() {
     const hh = Math.tan(((cam.fov * Math.PI) / 180) / 2) * cam.position.z;
-    return { hw: hh * cam.aspect, hh };
+    const clientH = heroEl.clientHeight || 1;
+    const f = Math.min(1, window.innerHeight / clientH); // on-screen fraction
+    return {
+      hw: hh * cam.aspect,
+      hh,
+      cy: hh * (1 - f), // world-y center of the on-screen region
+      vhh: hh * f, // on-screen half-height in world units
+    };
   }
 
-  // every icon gets its own slot on an ellipse hugging the hero edges, so each
-  // one sits in the negative space around the headline instead of behind the
-  // opaque text — guarantees all of them stay visible. The slight tilt keeps an
-  // icon off the dead-center top/bottom (where the solid headline lines live).
-  function slot(i: number, b: { hw: number; hh: number }) {
+  // Static 3-row grid, centred in the on-screen region. 13 icons split across
+  // 3 rows with the leftover handed to the middle row -> [4, 5, 4].
+  const ROWS = 3;
+  const ROW_COUNTS = (() => {
     const n = ICONS.length;
-    const ang = -Math.PI / 2 + 0.18 + ((i + 0.5) / n) * Math.PI * 2;
-    return new THREE.Vector3(Math.cos(ang) * b.hw * 0.9, Math.sin(ang) * b.hh * 0.82, 0);
+    const c = Array.from({ length: ROWS }, () => Math.floor(n / ROWS));
+    const order = [1, 0, 2]; // give extras to the middle row first
+    for (let k = 0; k < n % ROWS; k++) c[order[k]]++;
+    return c;
+  })();
+  const ROW_START = ROW_COUNTS.map((_, r) => ROW_COUNTS.slice(0, r).reduce((a, b) => a + b, 0));
+
+  function gridPos(i: number, b: { hw: number; cy: number; vhh: number }) {
+    let row = 0;
+    while (row < ROWS - 1 && i >= ROW_START[row] + ROW_COUNTS[row]) row++;
+    const col = i - ROW_START[row];
+    const n = ROW_COUNTS[row];
+    // Per-row horizontal offset so columns don't line up (no "column" look):
+    // top row right, middle centred, bottom row left. The middle row is also a
+    // touch narrower so its end icons (Next's black circle, Figma) stay in view.
+    const isMid = row === 1;
+    const stepX = b.hw * (isMid ? 0.4 : 0.46);
+    const stagger = [0.28, 0, -0.2][row] * stepX;
+    const x = (col - (n - 1) / 2) * stepX + stagger;
+    const y = b.cy + ((ROWS - 1) / 2 - row) * b.vhh * 0.5;
+    return new THREE.Vector3(x, y, 0);
   }
 
   function layout() {
     const b = viewBounds();
     items.forEach((o) => {
-      const p = slot(o.userData.idx, b);
-      o.userData.base.copy(p);
+      const p = gridPos(o.userData.idx, b);
+      o.userData.base.copy(p); // anchor: the loop floats each icon around this grid spot
       o.position.x = p.x;
     });
   }
@@ -94,8 +122,11 @@ export function initScene(canvas: HTMLCanvasElement, heroEl: HTMLElement): () =>
         idx: i,
         sp: 0.3 + Math.random() * 0.4,
         ph: Math.random() * 6.28,
-        amp: 0.28,
-        base: slot(i, viewBounds()),
+        amp: 0.5, // up/down reach
+        spX: 0.25 + Math.random() * 0.35,
+        phX: Math.random() * 6.28,
+        ampX: 0.5, // left/right reach
+        base: gridPos(i, viewBounds()),
         rot: 0.15 + Math.random() * 0.25,
       };
       obj.position.copy(obj.userData.base);
@@ -121,14 +152,21 @@ export function initScene(canvas: HTMLCanvasElement, heroEl: HTMLElement): () =>
   function resize() {
     const w = heroEl.clientWidth;
     const ht = heroEl.clientHeight;
-    renderer.setSize(w, ht, false);
+    renderer.setSize(w, ht); // updateStyle=true: pin CSS size so retina (dpr>1) doesn't display the canvas at 2× and shove the scene off-centre
     cam.aspect = w / ht;
     cam.updateProjectionMatrix();
     layout();
   }
-  window.addEventListener("resize", resize);
+  // Re-fit whenever the hero actually changes size. Crucial because the Anton
+  // web font loads late: the hero is shorter before it lands, taller after — a
+  // one-shot layout would bake icon positions against the short height and let
+  // the bottom of the ring fall below the fold once the font grows the headline.
+  const ro = new ResizeObserver(resize);
+  ro.observe(heroEl);
+  if (document.fonts?.ready) document.fonts.ready.then(resize);
   resize();
 
+  // Each icon floats + spins around its grid anchor; loop pauses off-screen.
   const clock = new THREE.Clock();
   let heroVisible = true;
   const io = new IntersectionObserver((es) => es.forEach((e) => (heroVisible = e.isIntersecting)));
@@ -142,6 +180,7 @@ export function initScene(canvas: HTMLCanvasElement, heroEl: HTMLElement): () =>
     items.forEach((o) => {
       const u = o.userData;
       o.position.y = u.base.y + Math.sin(t * u.sp + u.ph) * u.amp;
+      o.position.x = u.base.x + Math.cos(t * u.spX + u.phX) * u.ampX;
       o.rotation.y = Math.sin(t * u.rot + u.ph) * 0.6;
       o.rotation.x = Math.cos(t * u.rot * 0.8 + u.ph) * 0.3;
     });
@@ -151,8 +190,8 @@ export function initScene(canvas: HTMLCanvasElement, heroEl: HTMLElement): () =>
 
   return () => {
     cancelAnimationFrame(raf);
-    window.removeEventListener("resize", resize);
     io.disconnect();
+    ro.disconnect();
     scene.traverse((o) => {
       const m = o as THREE.Mesh;
       if (m.geometry) m.geometry.dispose();

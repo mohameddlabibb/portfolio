@@ -1,17 +1,18 @@
-const ITEMS = ["React", "TypeScript", "Node.js", "Vite", "Tailwind", "MySQL", "Supabase", "Express", "REST API", "Git", "Figma", "Dart"];
+interface BandProps {
+  variant: "dark" | "acc" | "lime";
+  items: string[];
+  /** repeats so the -50% loop stays seamless; even & wide enough to fill */
+  reps?: number;
+  borderTopNone?: boolean;
+}
 
-export default function Marquee() {
+export default function Band({ variant, items, reps = 2, borderTopNone }: BandProps) {
+  const run = Array.from({ length: reps }).flatMap(() => items);
   return (
-    <div style={{ overflow: "hidden", borderTop: "1px solid rgba(0,0,0,.07)", padding: "11px 0", background: "#0a0a0a" }}>
-      <div className="mtrack">
-        {[0, 1].map(k => (
-          <span key={k} style={{ display: "flex", gap: 36, paddingRight: 36 }}>
-            {ITEMS.map(s => (
-              <span key={s} style={{ fontSize: ".7rem", letterSpacing: ".16em", color: "rgba(255,255,255,.28)", textTransform: "uppercase", whiteSpace: "nowrap" }}>
-                {s}<span style={{ color: "#ff3500", margin: "0 8px", fontSize: ".55rem" }}>✦</span>
-              </span>
-            ))}
-          </span>
+    <div className={`band ${variant}`} style={borderTopNone ? { borderTop: "none" } : undefined}>
+      <div className="run anton" data-marquee>
+        {run.map((s, i) => (
+          <span key={i}>{s}</span>
         ))}
       </div>
     </div>

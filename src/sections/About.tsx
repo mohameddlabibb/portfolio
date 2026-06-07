@@ -1,57 +1,37 @@
-import { SVCS } from "../data/constants";
-
-const STATS: [string, string][] = [
-  ["5+",      "Projects"],
-  ["12+",     "Technologies"],
-  ["SomaBay", "Internship"],
-  ["2026",    "Graduating"],
-];
+import { STATS, SERVICES } from "../data/constants";
 
 export default function About() {
   return (
-    <section id="about" style={{ background: "#0a0a0a", padding: "clamp(60px,9vw,90px) clamp(20px,5.6vw,56px)" }}>
-      <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-
-        <div className="rv" style={{ marginBottom: 48 }}>
-          <p style={{ fontSize: ".75rem", letterSpacing: ".22em", color: "#ff3500", fontFamily: "monospace", marginBottom: 10 }}>About + Services</p>
-          <h2 style={{ fontSize: "clamp(32px,5vw,60px)", fontWeight: 900, letterSpacing: "-.02em", color: "#fff" }}>I Build Things That Matter</h2>
-        </div>
-
-        {/* service cards */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(200px,1fr))", gap: 16, marginBottom: 56 }}>
-          {SVCS.map((s, i) => (
-            <div
-              key={s.id}
-              className="rv"
-              style={{ transitionDelay: `${i * .07}s`, background: "#111", borderRadius: 16, padding: "26px 22px", border: "1px solid #1e1e1e", transition: "all .3s", cursor: "default" }}
-              onMouseEnter={e => { e.currentTarget.style.borderColor = s.c; e.currentTarget.style.transform = "translateY(-4px)"; e.currentTarget.style.boxShadow = `0 12px 32px ${s.c}22`; }}
-              onMouseLeave={e => { e.currentTarget.style.borderColor = "#1e1e1e"; e.currentTarget.style.transform = "none"; e.currentTarget.style.boxShadow = "none"; }}
-            >
-              <div style={{ width: 36, height: 36, borderRadius: 10, background: s.bg, marginBottom: 14, display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <div style={{ width: 12, height: 12, borderRadius: "50%", background: s.c }} />
-              </div>
-              <h3 style={{ fontSize: "1rem", fontWeight: 800, color: "#fff", marginBottom: 7 }}>{s.l}</h3>
-              <p style={{ fontSize: ".8rem", color: "#444", lineHeight: 1.6 }}>{s.d}</p>
-            </div>
-          ))}
-        </div>
-
-        {/* stats row */}
-        <div className="stats-grid rv">
-          {STATS.map(([v, l]) => (
-            <div key={l}>
-              <div style={{ fontSize: "clamp(26px,3.5vw,44px)", fontWeight: 900, color: "#fff", fontFamily: "monospace", marginBottom: 6 }}>{v}</div>
-              <div style={{ fontSize: ".7rem", color: "#444", letterSpacing: ".1em", textTransform: "uppercase" }}>{l}</div>
-            </div>
-          ))}
-        </div>
-
-        <p className="rv" style={{ color: "#555", lineHeight: 1.9, fontSize: ".95rem", maxWidth: 620, transitionDelay: ".15s" }}>
-          Frontend developer & BIS student at AASTMT Cairo. React/TypeScript specialist from pixel-perfect UIs to REST APIs,
-          and produce{" "}
-          <span style={{ color: "#ff3500" }}>AI-driven fashion photography</span> for Egyptian streetwear brands.
+    <section id="about" className="pad">
+      <p className="eb rv">// About</p>
+      <h2 className="big rl"><span>I build things.</span></h2>
+      <div className="about-row">
+        <p className="rv">
+          Frontend developer &amp; BIS student at AASTMT Cairo.{" "}
+          <span className="h">React / TypeScript specialist</span> from pixel-perfect UIs to
+          REST APIs — plus <span className="h2">AI-driven fashion photography</span> for
+          Egyptian streetwear brands.
         </p>
-
+        <div className="stats">
+          {STATS.map((s) => (
+            <div className="stat" key={s.label}>
+              {s.count !== undefined ? (
+                <div className="v" data-count={s.count} data-suffix={s.suffix || ""}>0</div>
+              ) : (
+                <div className="v" style={{ fontSize: "1.5rem" }}>{s.v}</div>
+              )}
+              <div className="l">{s.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="svcs">
+        {SERVICES.map((s) => (
+          <div className="svc rv" key={s.n}>
+            <div className="n">{s.n}</div>
+            <h3>{s.t}</h3>
+          </div>
+        ))}
       </div>
     </section>
   );

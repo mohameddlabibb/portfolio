@@ -29,7 +29,7 @@ nav .l{display:flex;gap:22px;font-size:.74rem;letter-spacing:.14em;text-transfor
 .hero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:90px 0 40px;overflow:hidden}
 .hero .pad{position:relative;z-index:2}
 .pad{padding-left:26px;padding-right:26px}
-.line{font-family:'Anton';font-size:clamp(54px,15vw,210px);line-height:.86;text-transform:uppercase;overflow:hidden;overflow:clip;overflow-clip-margin:.22em}
+.line{font-family:'Anton';font-size:clamp(54px,15vw,210px);line-height:.86;text-transform:uppercase;overflow:hidden;overflow:clip;overflow-clip-margin:.35em}
 .line .inner{display:block}
 .line.o .inner{color:transparent;-webkit-text-stroke:2px var(--ink)}
 .line.fill .inner{background:linear-gradient(90deg,var(--accent),var(--pink),var(--blue),var(--accent));background-size:300% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:flow 8s linear infinite}
@@ -54,7 +54,7 @@ h2.big{font-family:'Anton';font-size:clamp(44px,11vw,150px);line-height:.86;marg
 
 /* reveal util */
 .rv{opacity:0;transform:translateY(40px)}
-.rl{overflow:hidden;overflow:clip;overflow-clip-margin:.22em}.rl>*{display:block}
+.rl{overflow:hidden;overflow:clip;overflow-clip-margin:.35em}.rl>*{display:block}
 
 .about-row{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:end}
 .about-row p{font-size:clamp(18px,2.4vw,30px);font-weight:500;line-height:1.45}

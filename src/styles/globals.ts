@@ -37,6 +37,7 @@ nav .l{display:flex;gap:22px;font-size:.74rem;letter-spacing:.14em;text-transfor
 .line{font-family:'Anton';font-size:clamp(54px,15cqw,210px);line-height:.86;text-transform:uppercase;overflow:hidden;overflow:clip;overflow-clip-margin:.35em}
 .line .inner{display:block}
 .line.o .inner{color:transparent;-webkit-text-stroke:2px var(--ink)}
+.line.fill{margin-top:.08em}
 .line.fill .inner{background:linear-gradient(90deg,var(--accent),var(--pink),var(--blue),var(--accent));background-size:300% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:flow 8s linear infinite}
 @keyframes flow{to{background-position:300% 0}}
 .hero .meta{position:relative;z-index:4;display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;padding:30px 26px 0;border-top:2px solid var(--ink);margin-top:24px;opacity:0}

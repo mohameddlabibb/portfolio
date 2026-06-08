@@ -59,7 +59,7 @@ export const SERVICES = [
 export const SKILL_CATS: { n: string; color?: string; cat: string; items: string[] }[] = [
   { n: "01", cat: "Frontend", items: ["React", "TypeScript", "Vite", "Tailwind CSS", "HTML/CSS", "JavaScript"] },
   { n: "02", color: "var(--blue)", cat: "Backend", items: ["Node.js", "Express", "MySQL", "Supabase", "JWT Auth", "REST APIs"] },
-  { n: "03", color: "var(--pink)", cat: "Tools", items: ["Git", "VS Code", "Postman", "Figma", "Vercel", "Claude Code"] },
+  { n: "03", color: "var(--pink)", cat: "Tools", items: ["Git",  "Postman", "Figma", "Vercel"] },
 ];
 
 export const EMAIL = "mohameddlabibb@gmail.com";

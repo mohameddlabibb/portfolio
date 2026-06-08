@@ -20,7 +20,10 @@ export default function Work() {
               <p>{p.desc}</p>
               <div className="row">
                 <span className="tags">{p.tags}</span>
-                <a className="gh" href={p.github} target="_blank" rel="noopener">GitHub ↗</a>
+                <span className="links">
+                  {p.live && <a className="gh" href={p.live} target="_blank" rel="noopener">Live ↗</a>}
+                  <a className="gh" href={p.github} target="_blank" rel="noopener">GitHub ↗</a>
+                </span>
               </div>
             </div>
           </article>

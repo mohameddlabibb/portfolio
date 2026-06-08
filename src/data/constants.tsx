@@ -16,6 +16,7 @@ export interface Project {
   desc: string;
   tags: string;
   github: string;
+  live?: string;
 }
 
 export const PROJECTS: Project[] = [
@@ -28,6 +29,7 @@ export const PROJECTS: Project[] = [
     desc: "Full-stack platform connecting people with social support services. React/TS frontend, Node/Express/MySQL backend, JWT auth, admin dashboard & booking flow.",
     tags: "React · TypeScript · Node · MySQL",
     github: "https://github.com/mohameddlabibb/SANAD.web",
+    live: "https://sanadweb.vercel.app/",
   },
   {
     n: "02",

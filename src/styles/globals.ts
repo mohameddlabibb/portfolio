@@ -99,6 +99,7 @@ h2.big{font-family:'Anton';font-size:clamp(44px,11cqw,150px);line-height:.86;mar
 .pcard p{line-height:1.6;font-weight:500;margin-bottom:14px;color:#333}
 .pcard .row{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
 .pcard .tags{font-family:'JetBrains Mono';font-size:.74rem;color:var(--mut)}
+.pcard .links{display:flex;gap:16px;align-items:center}
 .pcard .gh{font-family:'JetBrains Mono';font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;border-bottom:2px solid var(--ink);padding-bottom:2px}
 
 /* contact */

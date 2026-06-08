@@ -24,14 +24,17 @@ export default function Portfolio() {
       </div>
 
       <Navbar />
-      <Hero />
-      <Band variant="dark" items={MARQUEES.tech} reps={2} />
-      <About />
-      <Band variant="acc" items={MARQUEES.available} reps={4} />
-      <Skills />
-      <Band variant="lime" items={MARQUEES.work} reps={4} />
-      <Work />
-      <Contact />
+
+      <div className="app">
+        <Hero />
+        <Band variant="dark" items={MARQUEES.tech} reps={2} />
+        <About />
+        <Band variant="acc" items={MARQUEES.available} reps={4} />
+        <Skills />
+        <Band variant="lime" items={MARQUEES.work} reps={4} />
+        <Work />
+        <Contact />
+      </div>
     </>
   );
 }

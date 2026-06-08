@@ -131,7 +131,11 @@ export function initMotion(): () => void {
     if (window.innerWidth > 780 && !reduce) {
       const track = document.getElementById("htrack");
       if (track) {
-        const dist = () => track.scrollWidth - window.innerWidth + 52;
+        // measure the track's own viewport (capped by the .app shell on wide
+        // screens) rather than window.innerWidth, so the horizontal travel is
+        // correct once the layout is locked at --maxw.
+        const view = () => track.parentElement?.clientWidth ?? window.innerWidth;
+        const dist = () => Math.max(0, track.scrollWidth - view());
         gsap.to(track, {
           x: () => -dist(),
           ease: "none",

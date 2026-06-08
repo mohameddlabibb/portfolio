@@ -1,14 +1,13 @@
 const G = `
-:root{--ink:#0a0a0a;--paper:#f7f4ee;--accent:#ff3500;--lime:#d8ff3e;--blue:#2b4cff;--pink:#ff52c8;--mut:#9a948c;--maxw:1440px;--gutter:max(0px,calc((100vw - var(--maxw)) / 2))}
+:root{--ink:#0a0a0a;--paper:#f7f4ee;--accent:#ff3500;--lime:#d8ff3e;--blue:#2b4cff;--pink:#ff52c8;--mut:#9a948c}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%}
 body{background:var(--paper);color:var(--ink);font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 
-/* ── desktop lock: cap the layout at a fixed design width and centre it so
-   every monitor ≥ --maxw renders an identical design. Fluid sizing inside the
-   shell references this container (cqw) instead of the viewport (vw), so type
-   and spacing stop growing past --maxw. ── */
-.app{max-width:var(--maxw);margin:0 auto;container-type:inline-size;position:relative}
+/* ── full-width shell: spans the whole viewport at every size. container-type
+   keeps cqw-based fluid type/spacing working — it now references the full
+   container width, so the layout scales smoothly across desktop sizes. ── */
+.app{container-type:inline-size;position:relative}
 .anton{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.01em}
 .mono{font-family:'JetBrains Mono',monospace}
 a{color:inherit;text-decoration:none}
@@ -27,7 +26,7 @@ a{color:inherit;text-decoration:none}
 
 /* ── 3D hero canvas ── */
 .scene{position:absolute;inset:0;z-index:1;pointer-events:none}
-nav{position:fixed;top:0;left:0;right:0;z-index:60;display:flex;justify-content:space-between;align-items:center;padding:16px calc(26px + var(--gutter));mix-blend-mode:difference;color:#fff}
+nav{position:fixed;top:0;left:0;right:0;z-index:60;display:flex;justify-content:space-between;align-items:center;padding:16px 26px;mix-blend-mode:difference;color:#fff}
 nav .b{font-family:'Anton';font-size:1.5rem}
 nav .l{display:flex;gap:22px;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase}
 

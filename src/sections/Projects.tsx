@@ -22,7 +22,7 @@ export default function Work() {
                 <span className="tags">{p.tags}</span>
                 <span className="links">
                   {p.live && <a className="gh" href={p.live} target="_blank" rel="noopener">Live ↗</a>}
-                  <a className="gh" href={p.github} target="_blank" rel="noopener">GitHub ↗</a>
+                  {p.github && <a className="gh" href={p.github} target="_blank" rel="noopener">GitHub ↗</a>}
                 </span>
               </div>
             </div>

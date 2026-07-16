@@ -15,13 +15,33 @@ export interface Project {
   title: string;
   desc: string;
   tags: string;
-  github: string;
+  github?: string;
   live?: string;
 }
 
 export const PROJECTS: Project[] = [
   {
     n: "01",
+    img: "/violtex.jpg",
+    gradient: "linear-gradient(135deg,#d4af37,#141414)",
+    kicker: "Client Work",
+    title: "Violtex",
+    desc: "Sportswear manufacturer's site, live on its own domain. Walks the full production story from weaving to finishing, with 3D product views, scroll-driven motion, and a quote request flow wired straight to their inbox.",
+    tags: "Next.js · TypeScript · Three.js · GSAP",
+    live: "https://www.violtex.com/",
+  },
+  {
+    n: "02",
+    img: "/fourshots.png",
+    gradient: "linear-gradient(135deg,#a855f7,#facc15)",
+    kicker: "Local Business",
+    title: "FourShots",
+    desc: "Ordering site for a local coffee shop — their story, identity, and menu in one place. Mobile-first checkout built as a phone-in-hand interface: browse the menu, build a round, pick up or dine in.",
+    tags: "Next.js · React · CSS",
+    live: "https://4-shots.vercel.app",
+  },
+  {
+    n: "03",
     img: "/sanad.png",
     gradient: "linear-gradient(135deg,#ff3500,#f43f5e)",
     kicker: "Graduation Project",
@@ -32,7 +52,7 @@ export const PROJECTS: Project[] = [
     live: "https://sanadweb.vercel.app/",
   },
   {
-    n: "02",
+    n: "04",
     gradient: "linear-gradient(135deg,#7c3aed,#2563eb)",
     kicker: "Utility",
     title: "FindDocs",

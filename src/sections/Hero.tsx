@@ -9,8 +9,8 @@ export default function Hero() {
       </div>
       <div className="meta" id="heroMeta">
         <p className="role">
-          Full-Stack Dev building immersive, AI-powered web &amp; mobile experiences
-          for businesses — plus AI fashion photography for Egyptian streetwear brands.
+          Full-Stack Developer | I build fast, interactive web experiences for
+          brands | React · TypeScript · Node · WebGL
         </p>
         <span className="avail">Cairo</span>
       </div>

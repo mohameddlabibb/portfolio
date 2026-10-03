@@ -66,7 +66,7 @@ h2.big{font-family:'Anton';font-size:clamp(44px,11cqw,150px);line-height:.86;mar
 .about-row{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:end}
 .about-row p{font-size:clamp(18px,2.4cqw,30px);font-weight:500;line-height:1.45}
 .about-row p .h{background:var(--lime);padding:0 .1em}.about-row p .h2{background:var(--accent);color:#fff;padding:0 .1em}
-.stats{display:grid;grid-template-columns:repeat(4,1fr)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr)}
 .stat{padding:30px 14px;text-align:center;border:2px solid var(--ink);margin:-1px}
 .stat .v{font-family:'Anton';font-size:clamp(36px,6cqw,84px);line-height:1}
 .stat .l{font-family:'JetBrains Mono';font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;margin-top:8px}

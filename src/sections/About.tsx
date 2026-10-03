@@ -6,8 +6,8 @@ export default function About() {
       <h2 className="big rl"><span>I build things.</span></h2>
       <div className="about-row">
         <p className="rv">
-          Full-Stack Dev building immersive, AI-powered web &amp; mobile
-          experiences for businesses.
+          Full-Stack Developer specializing in creative frontends — React,
+          Three.js/R3F, GSAP — with AI integrations, across Web &amp; Flutter.
         </p>
         <div className="stats">
           {STATS.map((s) => (

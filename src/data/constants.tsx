@@ -53,6 +53,16 @@ export const PROJECTS: Project[] = [
   },
   {
     n: "04",
+    img: "/tasnim.png",
+    gradient: "linear-gradient(135deg,#b8860b,#2b1a12)",
+    kicker: "Fashion / Creative",
+    title: "Fashion Designer Portfolio",
+    desc: "Portfolio site for a Cairo-based fashion designer. A 3D zipper unzips on scroll to reveal the work — runway looks, couture illustrations, and technical flats presented as a fanning deck of collection cards, each opening into its own world.",
+    tags: "Three.js · GSAP · Lenis",
+    live: "https://tasnimportfolio.vercel.app",
+  },
+  {
+    n: "05",
     gradient: "linear-gradient(135deg,#7c3aed,#2563eb)",
     kicker: "Utility",
     title: "FindDocs",
@@ -66,8 +76,7 @@ export const PROJECTS: Project[] = [
 export const STATS: { v?: string; count?: number; suffix?: string; label: string }[] = [
   { count: PROJECTS.length, suffix: "+", label: "Projects" },
   { count: 12, suffix: "+", label: "Tech" },
-  { v: "SomaBay", label: "Internship" },
-  { count: 2026, label: "Graduating" },
+  { count: 2, suffix: "+", label: "Yrs Experience" },
 ];
 
 export const SERVICES = [

@@ -9,10 +9,10 @@ export default function Hero() {
       </div>
       <div className="meta" id="heroMeta">
         <p className="role">
-          Building production web apps end-to-end, from interface to database. BIS
-          student @ AASTMT Cairo — plus AI fashion photography for Egyptian streetwear brands.
+          Full-Stack Dev building immersive, AI-powered web &amp; mobile experiences
+          for businesses — plus AI fashion photography for Egyptian streetwear brands.
         </p>
-        <span className="avail"><span className="dot" /> Available · Cairo · Hire me</span>
+        <span className="avail">Cairo</span>
       </div>
     </header>
   );

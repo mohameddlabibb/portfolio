@@ -6,10 +6,8 @@ export default function About() {
       <h2 className="big rl"><span>I build things.</span></h2>
       <div className="about-row">
         <p className="rv">
-          Full-Stack developer &amp; BIS student at AASTMT Cairo.{" "}
-          I build clean, fast interfaces and the systems behind them —
-          plus AI-driven fashion photography for
-          Egyptian streetwear brands.
+          Full-Stack Dev building immersive, AI-powered web &amp; mobile
+          experiences for businesses.
         </p>
         <div className="stats">
           {STATS.map((s) => (

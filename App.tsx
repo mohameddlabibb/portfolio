@@ -20,7 +20,7 @@ export default function Portfolio() {
 
       <div className="pre" id="pre">
         <div className="cnt anton" id="cnt">0</div>
-        <div className="lbl">Loading<br />Mohamed Labib '26</div>
+        <div className="lbl">Loading<br />Mohamed Labib</div>
       </div>
 
       <Navbar />

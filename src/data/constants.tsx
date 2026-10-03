@@ -22,6 +22,16 @@ export interface Project {
 export const PROJECTS: Project[] = [
   {
     n: "01",
+    img: "/tasnim.png",
+    gradient: "linear-gradient(135deg,#b8860b,#2b1a12)",
+    kicker: "Fashion / Creative",
+    title: "Fashion Designer Portfolio",
+    desc: "Portfolio site for a Cairo-based fashion designer. A 3D zipper unzips on scroll to reveal the work — runway looks, couture illustrations, and technical flats presented as a fanning deck of collection cards, each opening into its own world.",
+    tags: "Three.js · GSAP · Lenis",
+    live: "https://tasnimportfolio.vercel.app",
+  },
+  {
+    n: "02",
     img: "/violtex.jpg",
     gradient: "linear-gradient(135deg,#d4af37,#141414)",
     kicker: "Client Work",
@@ -31,7 +41,7 @@ export const PROJECTS: Project[] = [
     live: "https://www.violtex.com/",
   },
   {
-    n: "02",
+    n: "03",
     img: "/fourshots.png",
     gradient: "linear-gradient(135deg,#a855f7,#facc15)",
     kicker: "Local Business",
@@ -41,7 +51,7 @@ export const PROJECTS: Project[] = [
     live: "https://4-shots.vercel.app",
   },
   {
-    n: "03",
+    n: "04",
     img: "/sanad.png",
     gradient: "linear-gradient(135deg,#ff3500,#f43f5e)",
     kicker: "Graduation Project",
@@ -50,16 +60,6 @@ export const PROJECTS: Project[] = [
     tags: "React · TypeScript · Node · MySQL",
     github: "https://github.com/mohameddlabibb/SANAD.web",
     live: "https://sanadweb.vercel.app/",
-  },
-  {
-    n: "04",
-    img: "/tasnim.png",
-    gradient: "linear-gradient(135deg,#b8860b,#2b1a12)",
-    kicker: "Fashion / Creative",
-    title: "Fashion Designer Portfolio",
-    desc: "Portfolio site for a Cairo-based fashion designer. A 3D zipper unzips on scroll to reveal the work — runway looks, couture illustrations, and technical flats presented as a fanning deck of collection cards, each opening into its own world.",
-    tags: "Three.js · GSAP · Lenis",
-    live: "https://tasnimportfolio.vercel.app",
   },
   {
     n: "05",

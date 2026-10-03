@@ -9,8 +9,8 @@ export default function Hero() {
       </div>
       <div className="meta" id="heroMeta">
         <p className="role">
-          Full-Stack Developer specializing in creative frontends | React,
-          Three.js/R3F, GSAP | AI integrations | Web + Flutter
+          Full-Stack Dev building immersive, AI-powered web &amp; mobile experiences
+          for businesses — plus AI fashion photography for Egyptian streetwear brands.
         </p>
         <span className="avail">Cairo</span>
       </div>

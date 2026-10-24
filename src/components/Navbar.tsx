@@ -7,6 +7,7 @@ export default function Navbar() {
         <a href="#skills" data-link>Skills</a>
         <a href="#work" data-link>Work</a>
         <a href="#contact" data-link>Contact</a>
+        <a href="/Mohamed-Labib-CV.pdf" download="Mohamed Labib CV.pdf">My CV</a>
       </span>
     </nav>
   );
